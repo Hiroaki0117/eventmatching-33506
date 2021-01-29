@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color:rgb(170, 100, 42);
+  background-color: #FFF9DE;
   padding: 20px 0;
   align-items: center;
 
@@ -56,51 +56,53 @@ a {
 .nav__left {
   font-size: 25px;
 }
-.grid-6 {
-  width: 48.2%;
-  float: left;
-  margin-left: 0.9%;
-  margin-right: 0.9%;
-  
+
+.nav__right {
+  border: 2px solid #000000;
+  background-color: #fafafa;
+}
+
+.logo {
+  width: 200px;
 }
 
 .nav__btn{
   display: inline-block;
   padding: 0.6em 1.6em;
-  margin-right: 20px;
   font-size: 1.0em;
-  color: burlywood;
+  color: #3b4043;
   text-decoration: none;
   user-select: none;
-  border: 2px burlywood solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  font-weight: 600;
 }
 .nav__btn:hover{
-  color: bisque;
-  background: burlywood;
+  color: rgb(135, 158, 235);
 }
 
 .login_user_name{
   display: inline-block;
   font-size: 1.2em;
-  color: burlywood;
-
+  color: #000000;
+  padding: 0.6em 1.6em;
+  font-weight: 600;
 }
 .login_user_name:hover{
-  opacity: 0.5;
+  color: rgb(135, 158, 235);
 }
 
 .nav__logout{
   display: inline-block;
-  padding: 0.4em 1.6em;
+  padding: 0.6em 1.6em;
   font-size: 1.0em;
-  color: burlywood;
+  color: #000000;
   text-decoration: none;
   user-select: none;
+  font-weight: 600;
 }
 .nav__logout:hover{
-  opacity: 0.5;
+  color: rgb(135, 158, 235);
 }
 
 /* フォーム周り */
