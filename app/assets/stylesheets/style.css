@@ -12,6 +12,7 @@ p,
 div {
   margin: 0;
   padding: 0;
+  
 }
 
 body {
@@ -78,6 +79,16 @@ a {
   background: burlywood;
 }
 
+.login_user_name{
+  display: inline-block;
+  font-size: 1.0em;
+  color: burlywood;
+
+}
+.login_user_name:hover{
+  opacity: 0.5;
+}
+
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -93,6 +104,7 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  text-align: center;
 }
 
 .form__text {
@@ -330,16 +342,3 @@ a {
   }
 }
 
-.search-form {
-  text-align: center;
-}
-
-.search-form .search-input {
-  width: 30%;
-  margin-right: 10px;
-  height: 30px;
-}
-
-.search-form .search-btn {
-  width: 10%;
-}
