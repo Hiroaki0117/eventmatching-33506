@@ -1,0 +1,105 @@
+<div class="events-create-contents">
+  <div class="event-create-main">
+    <h1 class="events-create-title">イベントの新規募集</h1>
+    <%= form_with(model: @event, local: true) do |f| %>
+
+
+    <table class="events-table">
+      <tbody>
+        <tr>
+          <th>
+            イベント名
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= f.text_area :name, class:"event-form-default", id:"name", placeholder:"例) みんなでサッカーをしよう！", maxlength:"100", autofocus: true %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            画像
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, id:"item-image" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            イベントの詳細説明
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= f.text_area :explanation, class:"event-text-default", id:"explanation", placeholder:"例) 公園でサッカーをみんなでやりたいと思います。せっかくの休みの日に汗を流しましょう！", rows:"7" ,maxlength:"1000" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            イベントのジャンル
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"event-form-default"}) %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            日時
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= raw sprintf(
+              f.datetime_select(
+                :date,# プロパティ名
+                {
+                  use_month_numbers: true,
+                  prompt:'--',
+                  start_year:     Time.now.year,# 選択可能な開始年
+                  end_year:       Time.now.year + 5,# 選択可能な終了年
+                  date_separator: '%s',# 年, 月
+                  datetime_separator: '%s',# 日
+                  time_separator: '%s',# 時
+                  minute_step: 15
+                },# オプション
+                { class: 'date-select' }# htmlオプションを指定する場合は別で指定
+              ),
+              '年 ', '月 ', '日 ', '時 ') + '分'# 分 は最後につけ加えられる
+            %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            予定人数
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= f.text_area :capacity, class:"event-capacity", id:"explanation", placeholder:"例)15" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            開催場所
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= f.text_area :place, class:"event-form-default", id:"name", placeholder:"例) 〇〇体育館", maxlength:"100" %>
+          </td>
+        </tr>
+      <tbody>
+    <table>
+    <div class='submit-btn'>
+     <%= f.submit "募集を開始する" ,class:"submit-btn-text" %>
+    </div>
+    <% end %>
+  </div>
+</div>

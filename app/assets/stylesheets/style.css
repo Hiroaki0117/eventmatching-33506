@@ -9,7 +9,9 @@ li,
 h1,
 h2,
 p,
-div {
+div,
+tbody,
+tr {
   margin: 0;
   padding: 0;
   

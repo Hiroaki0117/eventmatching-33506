@@ -1,0 +1,147 @@
+table, tbody, tr, th, td, span, div {
+  font-family: "メイリオ", meiryo, Arial, Helvetica!important;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  vertical-align: baseline;
+  white-space: normal;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.events-create-contents {
+  background-color: #FFF9DE;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  padding-top: 50px;
+}
+
+.events-create-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.events-create-title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.events-table {
+  width: 500px;
+  border: 1px solid #D0D0D0;
+  border-radius: 5px;
+  margin: 30px auto 10px;
+}
+
+.events-table th, .events-table td {
+  padding: 5px 10px;
+  border: 1px solid #D0D0D0;
+  border-radius: 5px;
+}
+
+.events-table th {
+  background: #EDEFE1;
+  width: 150px;
+  vertical-align: top;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.mandatory {
+  background: #ea352d;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.events-table td {
+  background-color: white;
+}
+
+.event-form-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 35px;
+  padding: 5px 16px 8px;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.event-text-default {
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px 16px 8px;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.date-select {
+  margin-top: 5px;
+  border-radius: 4px;
+  resize: none;
+  height: 30px;
+}
+
+.event-capacity {
+  width: 25%;
+  margin-top: 5px;
+  height: 35px;
+  padding: 5px 16px 8px;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.post-code {
+  resize: none;
+  margin-top:5px;
+  height: 35px;
+  padding: 5px 16px 8px;
+  /*background: #fff;*/
+  font-size: 16px;
+}
+
+.post-area {
+  width: 100%;
+  margin-top: 5px;
+  height: 35px;
+  padding: 5px 16px 8px;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.submit-btn {
+  text-align: center;
+}
+
+.submit-btn-text {
+  border: 1px solid #ff5400;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #d78447;
+  background: linear-gradient(to bottom, #ff9a00, #ff3d00);
+  height: 40px;
+  width: 150px;
+  margin: 30px auto;
+}

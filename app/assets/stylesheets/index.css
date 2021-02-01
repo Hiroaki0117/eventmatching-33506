@@ -12,3 +12,12 @@
 .search-form .search-btn {
   width: 10%;
 }
+
+.main-content {
+  width: 80%;
+  text-align: center;
+}
+
+.top-image {
+  width: 100%;
+}

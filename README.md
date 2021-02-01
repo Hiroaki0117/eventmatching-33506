@@ -24,7 +24,7 @@
 | ------------------ | ------- | ------------------------- |
 | name               | string  | null: false               |
 | explanation        | text    | null: false               |
-| genre              | string  | null: false               |
+| genre_id              | string  | null: false               |
 | date               | date    | null: false               |
 | capacity           | string  | null: false               |
 | place              | string  | null: false               |
