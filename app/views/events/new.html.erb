@@ -1,6 +1,6 @@
 <div class="events-create-contents">
   <div class="event-create-main">
-    <h2 class="events-create-title">イベント募集要項を入力</h2>
+    <h1 class="events-create-title">イベントの新規募集</h1>
     <%= form_with(model: @event, local: true) do |f| %>
 
 
@@ -13,7 +13,7 @@
             <span class="mandatory">必須</span>
           </th>
           <td>
-            <%= f.text_area :name, class:"event-form-default", id:"name", placeholder:"例) 鬼ごっこ", maxlength:"100", autofocus: true %>
+            <%= f.text_area :name, class:"event-form-default", id:"name", placeholder:"例) みんなでサッカーをしよう！", maxlength:"100", autofocus: true %>
           </td>
         </tr>
         <tr>
@@ -37,6 +37,16 @@
           </th>
           <td>
             <%= f.text_area :event_explanation, class:"event-text-default", id:"explanation", placeholder:"例) 公園でサッカーをみんなでやりたいと思います。せっかくの休みの日に汗を流しましょう！", rows:"7" ,maxlength:"1000" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            イベントのジャンル
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"event-form-default"}) %>
           </td>
         </tr>
         <tr>
