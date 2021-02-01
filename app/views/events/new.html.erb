@@ -36,7 +36,7 @@
             <span class="mandatory">必須</span>
           </th>
           <td>
-            <%= f.text_area :event_explanation, class:"event-text-default", id:"explanation", placeholder:"例) 公園でサッカーをみんなでやりたいと思います。せっかくの休みの日に汗を流しましょう！", rows:"7" ,maxlength:"1000" %>
+            <%= f.text_area :explanation, class:"event-text-default", id:"explanation", placeholder:"例) 公園でサッカーをみんなでやりたいと思います。せっかくの休みの日に汗を流しましょう！", rows:"7" ,maxlength:"1000" %>
           </td>
         </tr>
         <tr>
@@ -58,7 +58,7 @@
           <td>
             <%= raw sprintf(
               f.datetime_select(
-                :day,# プロパティ名
+                :date,# プロパティ名
                 {
                   use_month_numbers: true,
                   prompt:'--',
@@ -92,14 +92,7 @@
             <span class="mandatory">必須</span>
           </th>
           <td>
-            <p>
-              郵便番号
-            </p>
-            <%= f.text_area :place, class:"post-code", name:"zip11", size:"10", maxlength:"8", onKeyUp:"AjaxZip3.zip2addr(this,'','addr11','addr11');" %>
-            <p>
-              都道府県+以降の住所
-            </p>
-            <%= f.text_area :place, class:"post-area", name:"addr11", size:"30" %>
+            <%= f.text_area :place, class:"event-form-default", id:"name", placeholder:"例) 〇〇体育館", maxlength:"100" %>
           </td>
         </tr>
       <tbody>
