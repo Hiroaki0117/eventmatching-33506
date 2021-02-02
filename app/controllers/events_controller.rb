@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def search
     @events = Event.search(params[:keyword])
-    @events = @events.order("created_at DESC").page(params[:page]).includes(:user)
+    @events = @events.order("created_at DESC").page(params[:page]).per(6).includes(:user)
   end
 
   private

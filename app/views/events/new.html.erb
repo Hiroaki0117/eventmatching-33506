@@ -1,8 +1,11 @@
 <div class="events-create-contents">
   <div class="event-create-main">
     <h1 class="events-create-title">イベントの新規募集</h1>
-    <%= form_with(model: @event, local: true) do |f| %>
 
+    
+    
+    <%= form_with(model: @event, local: true) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <table class="events-table">
       <tbody>
