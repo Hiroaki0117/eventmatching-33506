@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(version: 2021_02_01_051107) do
     t.string "genre_id", null: false
     t.date "date", null: false
     t.string "capacity", null: false
+    t.integer "area_id", null: false
     t.string "place", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
