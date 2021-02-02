@@ -14,8 +14,11 @@
   <ul class="main-list">
     <% @events.each do |event|%>
       <li class="event-info">
-        <div class="sport-genre">      
+        <div class="sports-genre">      
           <%= event.genre.name %>
+        </div>
+        <div class="sports-area">
+          <%= event.area.name %>
         </div>
         <dl class="event-exp">
           <dt>イベント名</dt>

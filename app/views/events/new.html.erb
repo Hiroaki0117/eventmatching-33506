@@ -87,6 +87,16 @@
         </tr>
         <tr>
           <th>
+            都道府県
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"event-form-default"}) %>
+          </td>
+        </tr>
+        <tr>
+          <th>
             開催場所
             <br>
             <span class="mandatory">必須</span>
