@@ -33,6 +33,7 @@
 .top-message {
  font-size: 25px;
  text-align: center;
+ margin-bottom: 20px;
 }
 
 .main-list {
@@ -97,4 +98,33 @@
   top: 20px;
   display: block;
   text-align: center;
+}
+
+.pagination{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+}
+.pagination span{
+  background-color: rgba(158, 158, 158, 0.4);
+  text-align: center;
+  width: 50px;
+  border: solid 1px #344963;
+  color: rgb(197, 20, 159);
+  transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  
+}
+.pagination span:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pagination span a:hover{
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
