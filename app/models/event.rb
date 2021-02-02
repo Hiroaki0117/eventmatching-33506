@@ -17,4 +17,12 @@ class Event < ApplicationRecord
     validates :genre_id
     validates :area_id 
   end
+
+  def self.search(search)
+    if search != ""
+      Event.where('name LIKE(?)', "%#{search}%")
+    else
+      Event.all
+    end
+  end
 end

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.order("created_at DESC").page(params[:page]).per(6)
+    @events = Event.order("created_at DESC").page(params[:page]).per(6).includes(:user)
   end
 
   def new
@@ -14,6 +14,11 @@ class EventsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def search
+    @events = Event.search(params[:keyword])
+    @events = @events.order("created_at DESC").page(params[:page]).includes(:user)
   end
 
   private
