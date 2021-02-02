@@ -1,8 +1,11 @@
 <div class="events-create-contents">
   <div class="event-create-main">
     <h1 class="events-create-title">イベントの新規募集</h1>
-    <%= form_with(model: @event, local: true) do |f| %>
 
+    
+    
+    <%= form_with(model: @event, local: true) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <table class="events-table">
       <tbody>
@@ -83,6 +86,16 @@
           </th>
           <td>
             <%= f.text_area :capacity, class:"event-capacity", id:"explanation", placeholder:"例)15" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            都道府県
+            <br>
+            <span class="mandatory">必須</span>
+          </th>
+          <td>
+            <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"event-form-default"}) %>
           </td>
         </tr>
         <tr>

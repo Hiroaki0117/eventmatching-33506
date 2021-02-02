@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.order(created_at: "DESC").includes(:user)
+    @events = Event.order("created_at DESC").page(params[:page]).per(6).includes(:user)
   end
 
   def new
@@ -16,10 +16,15 @@ class EventsController < ApplicationController
     end
   end
 
+  def search
+    @events = Event.search(params[:keyword])
+    @events = @events.order("created_at DESC").page(params[:page]).per(6).includes(:user)
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:name, :image, :explanation, :genre_id, :date, :capacity, :place).merge(user_id: current_user.id)
+    params.require(:event).permit(:name, :image, :explanation, :genre_id, :date, :capacity, :area_id, :place).merge(user_id: current_user.id)
   end
 
 

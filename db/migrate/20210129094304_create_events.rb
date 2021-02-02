@@ -6,9 +6,10 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string     :genre_id,         null: false
       t.date       :date,             null: false
       t.string     :capacity,         null: false
+      t.integer    :area_id,          null: false
       t.string     :place,            null: false
-      t.timestamps
       t.references :user,             foreign_key: true
+      t.timestamps
     end
   end
 end
