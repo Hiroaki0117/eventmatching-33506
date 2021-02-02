@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   has_one_attached :image
-  has_one :entry
+  has_many :entries
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
@@ -20,7 +20,7 @@ class Event < ApplicationRecord
 
   def self.search(search)
     if search != ""
-      Event.where('name LIKE(?)', "%#{search}%")
+      Event.where('name LIKE(?)', "%#{search}%") 
     else
       Event.all
     end
