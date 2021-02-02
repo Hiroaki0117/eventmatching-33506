@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.order(created_at: "DESC").includes(:user)
+    @events = Event.order("created_at DESC").page(params[:page]).per(6)
   end
 
   def new
