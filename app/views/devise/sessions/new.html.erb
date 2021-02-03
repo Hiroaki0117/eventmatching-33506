@@ -1,7 +1,12 @@
+<%= render "events/header-second" %>
+
 <%= form_with model: @user, url: user_session_path, class: 'events-create-contents', local: true do |f| %>
   <div class='event-create-main'>
       <h1 class="events-create-title">会員情報入力</h1>
-
+      <div class="login-no-account">
+        <p>アカウントをお持ちでない方はこちら</p>
+        <%= link_to "新規会員登録", new_user_registration_path, class:"account-btn" %>
+      </div>
       <%= render 'shared/error_messages', model: f.object %>
       <table class="events-table">
         <tbody>
