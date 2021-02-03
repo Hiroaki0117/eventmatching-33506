@@ -13,7 +13,12 @@ class Genre < ActiveHash::Base
     { id: 11, name: 'ドッヂボール' },
     { id: 12, name: 'スノーボード/スキー' },
     { id: 13, name: 'サイクリング' },
-    { id: 14, name: 'その他'}
+    { id: 14, name: '鬼ごっこ' },
+    { id: 15, name: '食事' },
+    { id: 16, name: '飲み会' },
+    { id: 17, name: 'ライブ/フェス' },
+    { id: 18, name: 'ショッピング' },
+    { id: 19, name: 'その他'}
   ]
 
   include ActiveHash::Associations

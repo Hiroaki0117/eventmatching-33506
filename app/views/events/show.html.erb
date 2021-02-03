@@ -1,0 +1,80 @@
+<div class="events-main-contents">
+  <div class="event-create-main">
+    <h1 class="events-create-title"><%= @event.name %></h1>
+  </div>
+
+  <div class="event-super">
+   <%= image_tag @event.image, class:"top-image" %>
+  </div>
+  <table class="events-table">
+      <tbody>
+        <tr>
+          <th>
+            イベント名
+          </th>
+          <td>
+            <%= @event.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            イベントの詳細説明
+          </th>
+          <td>
+            <%= @event.explanation %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            イベントのジャンル
+          </th>
+          <td>
+           <%= @event.genre.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            イベントの日時
+          </th>
+          <td>
+           <%= @event.date.year %>年<%= @event.date.month %>月<%= @event.date.day %>日
+          </td>
+        </tr>
+        <tr>
+          <th>
+            予定人数
+          </th>
+          <td>
+           <%= @event.capacity %>人
+          </td>
+        </tr>
+        <tr>
+          <th>
+            現在の人数
+          </th>
+          <td>
+           ○○人
+          </td>
+        </tr>
+        <tr>
+          <th>
+            都道府県
+          </th>
+          <td>
+           <%= @event.area.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            開催場所
+          </th>
+          <td>
+           <%= @event.place %>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+  <div class="event-entry-btn">
+    <%= link_to "申し込みをする", "#", class:"entry-btn" %>
+  </div>
+</div>

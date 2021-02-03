@@ -32,7 +32,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :entry
+- has_many :entries
 
 ## addresses テーブル
 | Column        | Type       | Options                        |

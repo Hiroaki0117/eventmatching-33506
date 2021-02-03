@@ -16,7 +16,7 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
 .events-create-contents {
   background-color: #FFF9DE;
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -52,7 +52,7 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
 
 .events-table th {
   background: #EDEFE1;
-  width: 150px;
+  width: 180px;
   vertical-align: top;
   text-align: center;
   margin-top: 15px;
@@ -68,7 +68,7 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
 }
 
 .events-table td {
-  background-color: white;
+  background-color: #fff;
 }
 
 .event-form-default {

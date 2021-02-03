@@ -36,6 +36,17 @@
  margin-bottom: 20px;
 }
 
+.event-count {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.event-count strong {
+  font-weight: bold;
+  color: orangered;
+}
+
 .main-list {
   font-size: 14px;
   width: 70%;

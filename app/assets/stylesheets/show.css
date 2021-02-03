@@ -1,0 +1,32 @@
+.events-main-contents {
+  background-color: #FFF9DE;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  padding-top: 50px;
+}
+
+.event-super {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.event-entry-btn {
+  margin: 60px auto;
+}
+
+.entry-btn {
+  background: linear-gradient(to bottom, #ff9a00, #ff3d00);
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  padding: 2vh 10vw;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
