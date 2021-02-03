@@ -38,7 +38,7 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
 }
 
 .events-table {
-  width: 500px;
+  width: 580px;
   border: 1px solid #D0D0D0;
   border-radius: 5px;
   margin: 30px auto 10px;
@@ -52,7 +52,7 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
 
 .events-table th {
   background: #EDEFE1;
-  width: 180px;
+  width: 200px;
   vertical-align: top;
   text-align: center;
   margin-top: 15px;
@@ -78,8 +78,8 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
   padding: 5px 16px 8px;
   border-radius: 4px;
   background: #fff;
-  font-size: 16px;
   resize: none;
+  border: 1px solid black;
 }
 
 .event-text-default {
