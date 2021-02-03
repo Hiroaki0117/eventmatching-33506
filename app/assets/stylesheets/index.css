@@ -55,12 +55,12 @@
   font-size: 14px;
   width: 70%;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .main-list li {
   border: 1px #cccccc solid;
   display: block;
-  margin-bottom: 20px;
   padding: 30px 10px 10px 10px;
   position: relative;
   background: #fffaf4;
