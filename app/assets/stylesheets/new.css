@@ -35,13 +35,14 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
   font-size: 25px;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .events-table {
   width: 580px;
   border: 1px solid #D0D0D0;
   border-radius: 5px;
-  margin: 30px auto 10px;
+  margin: 0px auto 10px;
 }
 
 .events-table th, .events-table td {
