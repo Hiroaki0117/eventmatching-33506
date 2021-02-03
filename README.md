@@ -13,6 +13,7 @@
 | kana_first_name    | string  | null: false               |
 | birth_day          | date    | null: false               |
 | area_id            | integer | null: false               |
+| introduction       | string  |                           |
 
 ### Association
 - has_many :events
