@@ -10,7 +10,9 @@
   <div class="top-message">
    <h1>＜新しいイベント情報＞</h1>
   </div>
-  
+  <div class="event-count">
+   <h2>現在のイベント募集数：<strong><%= @events.count %></strong>件<h2>
+  </div>
   <ul class="main-list">
     <% @events.each do |event|%>
       <li class="event-info">
@@ -22,9 +24,9 @@
         </div>
         <dl class="event-exp">
           <dt>イベント名</dt>
-          <dd><%= link_to event.name, "#" %></dd>
+          <dd><%= link_to event.name, event_path(event.id) %></dd>
           <dt>イベント詳細</dt>
-          <dd><%= link_to event.explanation, "#" %></dd>
+          <dd><%= link_to event.explanation, event_path(event.id) %></dd>
           <dt>開催場所</dt>
           <dd><%= event.place %></dd>
           <dt>予定人数</dt>
@@ -32,7 +34,7 @@
           <dt>日付</dt>
           <dd><%= event.date.year %>年<%= event.date.month %>月<%= event.date.day %>日</dd>
         </dl>
-        <%= link_to "#", class:"img-link" do %>
+        <%= link_to event_path(event.id), class:"img-link" do %>
           <%= image_tag event.image.variant(resize: '150x120') %>
         <% end %>
       </li>
