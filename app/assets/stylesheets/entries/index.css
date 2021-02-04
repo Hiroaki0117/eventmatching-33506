@@ -1,0 +1,10 @@
+.entry-super {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.entry-image {
+  width: 70%;
+  height: 70%;
+  border: 1px #CCCCCC solid;
+}
