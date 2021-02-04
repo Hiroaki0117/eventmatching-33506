@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2021_02_03_233603) do
   end
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "event_id"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_entries_on_event_id"
