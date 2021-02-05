@@ -3,7 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :nickname, presence: true
+  with_options presence: true do
+    validates :nickname
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "は半角数字を入力してください" }
+    validates :birth_day
+    validates :area_id, numericality: { other_than: 1, message: "を選択してください" }
+  end
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は英数字混合にしてください' }
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々]+\z/
@@ -16,8 +21,6 @@ class User < ApplicationRecord
     validates :kana_family_name
     validates :kana_first_name
   end
-  validates :birth_day, presence: true
-  validates :area_id, numericality: { other_than: 1, message: "を選択してください" }, presence: true
 
   has_many :events
   has_many :entries
