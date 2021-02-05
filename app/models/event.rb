@@ -9,7 +9,9 @@ class Event < ApplicationRecord
     validates :image
     validates :name
     validates :explanation
-    validates :date
+    validates :day
+    validates :start_time
+    validates :finish_time
     validates :capacity
     validates :place
   end
