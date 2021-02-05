@@ -59,24 +59,26 @@
               <br>
               <span class="mandatory">必須</span>
             </th>
-            <td>
+            <td class="days">
               <%= raw sprintf(
-                f.datetime_select(
-                  :date,# プロパティ名
-                  {
-                    use_month_numbers: true,
-                    prompt:'--',
-                    start_year:     Time.now.year,# 選択可能な開始年
-                    end_year:       Time.now.year + 5,# 選択可能な終了年
-                    date_separator: '%s',# 年, 月
-                    datetime_separator: '%s',# 日
-                    time_separator: '%s',# 時
-                    minute_step: 15
-                  },# オプション
-                  { class: 'date-select' }# htmlオプションを指定する場合は別で指定
-                ),
-                '年 ', '月 ', '日 ', '時 ') + '分'# 分 は最後につけ加えられる
+                f.date_select(
+                            :day,
+                            {
+                              id:"date",
+                              use_month_numbers: true,
+                              prompt:'--',
+                              start_year: 1930,
+                              end_year: (Time.now.year - 5),
+                              date_separator: '%s',
+                            },
+                            { class: 'date-select' }
+                          ),
+                          '年', '月') + '日'
               %>
+                <br>
+                  イベント時間
+                  <br>
+                    <%= f.time_select(:start_time, {class:'date-select', id:"start-time", prompt:'--', time_separator: ':', minute_step: 15}, ignore_data: true) %>~<%= f.time_select(:finish_time, {class:'date-select', id:"start-time", prompt:'--', time_separator: ':', minute_step: 15}, ignore_data: true ) %>
             </td>
           </tr>
           <tr>
