@@ -7,33 +7,67 @@
     <div class="entry-super">
       <%= image_tag @event.image, class:"entry-image" %>
     </div>
-    <table class="events-table">
-      <tbody>
-        <tr>
-          <th>
-            イベント名
-          </th>
-          <td>
-            <%= @event.name %>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            イベントの日時
-          </th>
-          <td>
-            <%= @event.date %>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            開催場所
-          </th>
-          <td>
-           <%= @event.place %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <%= form_with model:[@event, @entry],local: true do |f| %>
+    <div class="card-box">
+      <div class="card-header">
+        申し込みイベント
+      </div>
+      <div class="card-body">
+        <table class="card-table">
+          <tbody>
+            <tr>
+              <th>イベント名</th>
+              <td><%= @event.name %></td>
+              <%= f.hidden_field :@event_id, value:@event.name %>
+            </tr>
+            <tr>
+              <th>イベントの日時</th>
+              <td><%= @event.date %></td>
+              <%= f.hidden_field :event_id, value:@event.date %>
+            </tr>
+            <tr>
+              <th>イベントの開催場所</th>
+              <td><%= @event.place %></td>
+              <%= f.hidden_field :@event_id, value:@event.place %>
+            </tr>
+          </tbody>
+        </table>
+        <div class='user-edit-btn'>
+          <%= link_to "イベントの変更", "#", class:"edit-btn" %>
+        </div>
+      </div>
+    </div>
+    <div class="card-box">
+      <div class="card-header">
+        お客様ご連絡先
+      </div>
+      <div class="card-body">
+        <table class="card-table">
+          <tbody>
+            <tr>
+              <th>お名前</th>
+              <td><%= current_user.nickname %></td>
+              <%= f.hidden_field :user_id, value:current_user.nickname %>
+            </tr>
+            <tr>
+              <th>お電話番号</th>
+              <td>09082877769</td>
+            </tr>
+            <tr>
+              <th>メールアドレス</th>
+              <td><%= current_user.email %></td>
+              <%= f.hidden_field :user_id, value:current_user.email %>
+            </tr>
+          </tbody>
+        </table>
+        <div class='user-edit-btn'>
+          <%= link_to "ご連絡先の変更", "#", class:"edit-btn" %>
+        </div>
+      </div>
+    </div>
+    <div class='submit-btn'>
+        <%= f.submit "お申し込みの確定" ,class:"submit-btn-text" %>
+    </div>
+    <% end %>
   </div>
 </div>

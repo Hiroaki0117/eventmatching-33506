@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :entries, only:[:index]
+    resources :entries, only:[:index, :create]
   end
   
 end

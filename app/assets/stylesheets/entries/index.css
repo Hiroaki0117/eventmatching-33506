@@ -8,3 +8,69 @@
   height: 70%;
   border: 1px #CCCCCC solid;
 }
+
+.card-box {
+  background: #f2f2f2;
+  padding: 15px;
+  width: 70%;
+  margin: 0px auto 30px;
+}
+
+.card-header {
+  border-bottom: 1px solid #333;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.card-body {
+  display: block;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.card-body p {
+  padding-top: 15px;
+}
+
+
+
+.card-table th {
+  width: 200px;
+}
+
+.card-table th, .card-table td {
+  padding: .75rem;
+  vertical-align: top;
+}
+
+.card-table tr {
+  border-top: 1px solid #dee2eb;
+}
+
+.card-table tr:first-of-type{
+  border-top: 0;
+}
+
+.card-table  {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.user-edit-btn {
+  margin-bottom: 20px;
+}
+
+.edit-btn {
+  padding: 12px;
+  border: 1px solid #80ad60;
+  background: #333;
+  display: block;
+  width: 180px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
