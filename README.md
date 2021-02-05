@@ -28,8 +28,7 @@
 | explanation        | text    | null: false               |
 | genre_id           | string  | null: false               |
 | day                | date    | null: false               |
-| start_time         | date    | null: false               |
-| finish_time        | date    | null: false               |
+| time_id            | integer | null: false               |
 | capacity           | string  | null: false               |
 | area_id            | integer | null: false               |
 | place              | string  | null: false               |
