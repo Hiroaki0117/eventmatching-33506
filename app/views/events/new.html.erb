@@ -76,9 +76,9 @@
                           '年', '月') + '日'
               %>
                 <br>
-                  イベント時間
+                  イベント開始時間
                   <br>
-                    <%= f.time_select(:start_time, {class:'date-select', id:"start-time", prompt:'--', time_separator: ':', minute_step: 15}, ignore_data: true) %>~<%= f.time_select(:finish_time, {class:'date-select', id:"start-time", prompt:'--', time_separator: ':', minute_step: 15}, ignore_data: true ) %>
+                    <%= f.collection_select(:day_time_id, DayTime.all, :id, :name, {}, {class:"event-time-default"}) %>
             </td>
           </tr>
           <tr>
