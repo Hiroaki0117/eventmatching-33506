@@ -63,7 +63,7 @@
 .main-list li {
   border: 1px #cccccc solid;
   display: block;
-  padding: 30px 10px 10px 10px;
+  padding: 30px 15px 10px 15px;
   position: relative;
   background: #fffaf4;
 }
@@ -96,7 +96,7 @@
   display: block;
   float: left;
   clear: left;
-  width: 100px;
+  width: 150px;
   font-size: 13px;
   color: #937540;
   margin-bottom: 5px;
@@ -105,16 +105,15 @@
 .main-list li dd {
   padding-left: 75px;
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 20px;
   min-height: 20px;
 }
 
 .main-list li .img-link {
-  position: absolute;
-  right: 10px;
-  top: 20px;
+  padding-bottom: 15px;
   display: block;
   text-align: center;
+
 }
 
 .pagination{
@@ -144,4 +143,20 @@
   transition: .3s;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.lazy {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.event-name {
+  padding: 0 0 20px 0;
+  font-size: 25px;
+  width: calc(100% - 50px);
+}
+
+.event-name-font {
+  text-decoration: none;
+  color: #987945;
 }
