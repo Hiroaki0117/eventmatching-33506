@@ -13,6 +13,7 @@
 | kana_first_name    | string  | null: false               |
 | birth_day          | date    | null: false               |
 | area_id            | integer | null: false               |
+| phone_number       | string  | null: false               |
 | introduction       | string  |                           |
 
 ### Association
@@ -35,27 +36,13 @@
 - belongs_to :user
 - has_many :entries
 
-## addresses テーブル
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| post_code     | string     | null: false                    |
-| area_id       | integer    | null: false                    |
-| city          | string     | null: false                    |
-| street_number | string     | null: false                    |
-| buildings     | string     |                                |
-| phone_number  | string     | null: false                    |
-| purchase      | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :entry
-
 ## entries テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | event         | references | null: false, foreign_key: true |
 | user          | references | null: false, foreign_key: true |
 
-- has_one :address
+### Association
 - belongs_to :user
 - belongs_to :event
 
