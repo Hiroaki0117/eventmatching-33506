@@ -24,21 +24,25 @@
           <div class="sports-area">
             <%= event.area.name %>
           </div>
-          <dl class="event-exp">
-            <dt>イベント名</dt>
-            <dd><%= link_to event.name, event_path(event.id) %></dd>
-            <dt>イベントの内容</dt>
-            <dd><%= link_to event.explanation, event_path(event.id) %></dd>
-            <dt>開催場所</dt>
-            <dd><%= event.place %></dd>
-            <dt>予定人数</dt>
-            <dd><%= event.capacity %>人</dd>
-            <dt>日付</dt>
-            <dd><%= event.date.year %>年<%= event.date.month %>月<%= event.date.day %>日</dd>
-          </dl>
           <%= link_to event_path(event.id), class:"img-link" do %>
-            <%= image_tag event.image.variant(resize: '150x120') %>
+            <%= image_tag event.image.variant(resize: '500x400') %>
           <% end %>
+          <h2 class="event-name"><%= link_to event.name, event_path(event.id), class:"event-name-font" %></h2>
+          <dl class="event-exp">
+            <dt>
+              <img src="https://images.e-venz.com/frontend/image/location.svg" class="Location lazy" alt="Location">
+            </dt>
+            <dd><%= event.place %></dd>
+            <dt>
+              <img src="https://images.e-venz.com/frontend/image/women.svg" alt="Women" class="lazy">
+            </dt>
+            <dd><%= event.capacity %>人</dd>
+            <dt>
+              <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy">
+            </dt>
+            <dd><%= event.day.year %>年<%= event.day.month %>月<%= event.day.day %>日<%= event.day_time.name %>開始 </dd>
+          </dl>
+          
         </li>
       <% end %>
       <%= paginate @events %>
