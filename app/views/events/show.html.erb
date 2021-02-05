@@ -54,7 +54,7 @@
             現在の人数
           </th>
           <td>
-           ○○人
+            <%= @event.entries.count %>人
           </td>
         </tr>
         <tr>
@@ -75,7 +75,9 @@
         </tr>
       </tbody>
   </table>
-  <div class="event-entry-btn">
-    <%= link_to "申し込みをする", event_entries_path(@event.id), class:"entry-btn" %>
-  </div>
+  <% if current_user.id != @event.user_id  %> >
+    <div class="event-entry-btn">
+      <%= link_to "申し込みをする", event_entries_path(@event.id), class:"entry-btn" %>
+    </div>
+  <% end %>
 </div>
