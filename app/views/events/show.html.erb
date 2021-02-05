@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <th>
-            イベントの詳細説明
+            イベントの内容
           </th>
           <td>
             <%= @event.explanation %>
@@ -76,6 +76,6 @@
       </tbody>
   </table>
   <div class="event-entry-btn">
-    <%= link_to "申し込みをする", "#", class:"entry-btn" %>
+    <%= link_to "申し込みをする", event_entries_path(@event.id), class:"entry-btn" %>
   </div>
 </div>

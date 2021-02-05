@@ -22,6 +22,7 @@ table, tbody, tr, th, td, span, div, dl, dt, dd, img, a {
   flex-direction: column;
   min-width: 500px;
   padding-top: 50px;
+  padding-bottom: 55px;
 }
 
 .events-create-main {
