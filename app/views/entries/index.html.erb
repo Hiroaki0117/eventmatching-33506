@@ -51,7 +51,8 @@
             </tr>
             <tr>
               <th>お電話番号</th>
-              <td>09082877769</td>
+              <td><%= current_user.phone_number %></td>
+              <%= f.hidden_field :user_id, value:current_user.phone_number %>
             </tr>
             <tr>
               <th>メールアドレス</th>
