@@ -5,19 +5,19 @@ class Event < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
   belongs_to :area
+  belongs_to :day_time
   with_options presence: true do
     validates :image
     validates :name
     validates :explanation
-    validates :day
-    validates :start_time
-    validates :finish_time
+    validates :day    
     validates :capacity
     validates :place
   end
   with_options numericality: { other_than: 1, message: "を選択してください" }, presence: true do
     validates :genre_id
     validates :area_id 
+    validates :day_time_id
   end
 
   def self.search(search)
