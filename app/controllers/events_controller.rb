@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only:[:new, :create, :edit, :update]
+  before_action :event_id_params, only:[:show, :edit, :update]
+  before_action :move_to_index_edit, only:[:edit]
   def index
     @events = Event.order("created_at DESC").page(params[:page]).per(6).includes(:user)
   end
@@ -17,7 +20,17 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to event_path
+    else
+      render :edit
+    end
   end
 
   def search
@@ -31,5 +44,14 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :image, :explanation, :genre_id, :day, :day_time_id, :capacity, :area_id, :place).merge(user_id: current_user.id)
   end
 
+  def event_id_params
+    @event = Event.find(params[:id])
+  end
+
+  def move_to_index_edit
+    if current_user.id != @event.user_id 
+      redirect_to root_path
+    end
+  end
 
 end
