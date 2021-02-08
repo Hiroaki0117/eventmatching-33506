@@ -8,5 +8,11 @@ Rails.application.routes.draw do
     end
     resources :entries, only:[:index, :create]
   end
+  resources :users, only: :show do
+    member do
+      get 'mypage'
+    end
+  end
+  
   
 end
