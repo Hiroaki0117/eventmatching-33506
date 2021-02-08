@@ -1,0 +1,14 @@
+.user-edit-btn {
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #11a3ec;
+  height: 40px;
+  width: 250px;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}

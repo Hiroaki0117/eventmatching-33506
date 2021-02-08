@@ -1,0 +1,70 @@
+.events-main-contents {
+  background-color: #FFF9DE;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.event-super {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.event-entry-btn {
+  margin: 60px auto;
+}
+
+.entry-btn {
+  background: linear-gradient(to bottom, #ff9a00, #ff3d00);
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  padding: 2vh 10vw;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.event-edit-btn {
+  margin-top: 30px;
+  height: 40px;
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+
+.edit-path-btn {
+  border: 1px solid #ff5400;
+  background: linear-gradient(to bottom, #ff9a00, #ff3d00);
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #11a3ec;
+  height: 40px;
+  width: 150px;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.delete-path-btn {
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #11a3ec;
+  height: 40px;
+  width: 150px;
+  display: block;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+

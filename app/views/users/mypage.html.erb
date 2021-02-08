@@ -1,0 +1,71 @@
+<%= render "events/header-second" %>
+<div class="events-main-contents">
+  <div class="event-create-main">
+    <h1 class="events-create-title"><%= @user.nickname %>さんのご登録内容</h1>
+  </div> 
+  <table class="events-table">
+    <tbody>
+      <tr>
+        <th>
+          ニックネーム
+        </th>
+        <td>
+          <%= @user.nickname %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Eメール
+        </th>
+        <td>
+          <%= @user.email %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          パスワード
+        </th>
+        <td>
+          *********(セキュリティー上表示しておりません)
+        </td>
+      </tr>
+      <tr>
+        <th>
+          お名前
+        </th>
+        <td>
+          <%= @user.family_name %> <%= @user.first_name %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          お誕生日
+        </th>
+        <td>
+          <%= @user.birth_day.year %>年<%= @user.birth_day.month %>月<%= @user.birth_day.day %>日
+        </td>
+      </tr>
+      <tr>
+        <th>
+          お電話番号
+        </th>
+        <td>
+          <%= @user.phone_number %>人
+        </td>
+      </tr>
+      <tr>
+        <th>
+          自己紹介
+        </th>
+        <td>
+          <%= @user.introduction %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="event-edit-btn">
+    <%= link_to "登録内容の編集", "#", class: "user-edit-path-btn" %>
+    <%= link_to "ユーザー情報の削除", "#", data: { confirm: '削除しますか？' }, class: "user-delete-path-btn" %>
+  </div>
+</div>
+<%= render "events/footer" %>
