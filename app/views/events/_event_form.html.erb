@@ -1,0 +1,113 @@
+<%= form_with(model: @event, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <table class="events-table">
+        <tbody>
+          <tr>
+            <th>
+              イベント名
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.text_area :name, class:"event-form-default", id:"name", placeholder:"例) みんなでサッカーをしよう！", maxlength:"100", autofocus: true %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              画像
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <p>
+                クリックしてファイルをアップロード
+              </p>
+              <%= f.file_field :image, id:"item-image" %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              イベントの内容
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.text_area :explanation, class:"event-text-default", id:"explanation", placeholder:"例) 公園でサッカーをみんなでやりたいと思います。せっかくの休みの日に汗を流しましょう！", rows:"7" ,maxlength:"1000" %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              イベントのジャンル
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+            <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"event-form-default"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              日時
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td class="days">
+              <%= raw sprintf(
+                f.date_select(
+                            :day,
+                            {
+                              id:"date",
+                              use_month_numbers: true,
+                              prompt:'--',
+                              start_year: 1930,
+                              end_year: (Time.now.year - 5),
+                              date_separator: '%s',
+                            },
+                            { class: 'date-select' }
+                          ),
+                          '年', '月') + '日'
+              %>
+                <br>
+                  イベント開始時間
+                  <br>
+                    <%= f.collection_select(:day_time_id, DayTime.all, :id, :name, {}, {class:"event-time-default"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              予定人数
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.text_area :capacity, class:"event-capacity", id:"explanation", placeholder:"例)15" %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              都道府県
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.collection_select(:area_id, Area.all, :id, :name, {}, {class:"event-form-default"}) %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              開催場所
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.text_area :place, class:"event-form-default", id:"name", placeholder:"例) 〇〇体育館", maxlength:"100" %>
+            </td>
+          </tr>
+        <tbody>
+      </table>
+      <div class='submit-double-btn'>
+        <%= f.submit "募集内容を変更する" ,class:"submit-edit-btn" %>
+        <%= link_to "変更しない", :back,class:"submit-back-btn" %>
+      </div>
+    <% end %>
