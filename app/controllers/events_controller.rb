@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only:[:new, :create, :edit, :update]
-  before_action :event_id_params, only:[:show, :edit, :update]
-  before_action :move_to_index_edit, only:[:edit]
+  before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
+  before_action :event_id_params, only:[:show, :edit, :update, :destroy]
+  before_action :move_to_index_edit, only:[:edit, :destroy]
   def index
     @events = Event.order("created_at DESC").page(params[:page]).per(6).includes(:user)
   end
@@ -33,6 +33,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event.destroy
+    redirect_to root_path
+  end
+
   def search
     @events = Event.search(params[:keyword])
     @events = @events.order("created_at DESC").page(params[:page]).per(6).includes(:user)
@@ -53,5 +58,4 @@ class EventsController < ApplicationController
       redirect_to root_path
     end
   end
-
 end

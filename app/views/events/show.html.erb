@@ -76,9 +76,14 @@
       </tbody>
   </table>
   <% if user_signed_in? %>
-    <% if current_user.id != @event.user_id  %> 
+    <% if current_user.id == @event.user_id  %> 
+      <div class="event-edit-btn">
+        <%= link_to "イベントの編集", edit_event_path(@event.id), method: :get, class: "edit-path-btn" %>
+        <%= link_to "イベントの削除", event_path(@event.id), method: :delete, data: { confirm: '削除しますか？' }, class: "delete-path-btn" %>
+      </div>
+    <% else %>
       <div class="event-entry-btn">
-        <%= link_to "申し込みをする", event_entries_path(@event.id), class:"entry-btn" %>
+        <%= link_to "申し込みをする", event_entries_path(@event.id),class:"entry-btn" %>
       </div>
     <% end %>
   <% end %>

@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   has_one_attached :image
-  has_many :entries
+  has_many :entries, dependent: :destroy
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
