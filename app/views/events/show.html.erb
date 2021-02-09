@@ -81,7 +81,7 @@
         <%= link_to "イベントの編集", edit_event_path(@event.id), method: :get, class: "edit-path-btn" %>
         <%= link_to "イベントの削除", event_path(@event.id), method: :delete, data: { confirm: '削除しますか？' }, class: "delete-path-btn" %>
       </div>
-    <% elsif current_user.id != @entry.user_id %>
+    <% elsif ! current_user.entried_by?(@event.id) %>
       <div class="event-entry-btn">
         <%= link_to "申し込みをする", event_entries_path(@event.id),class:"entry-btn" %>
       </div>
@@ -90,7 +90,7 @@
     <% end %>
   <% else%>
     <div class="event-entry-btn">
-        <%= link_to "申し込みをする", new_user_registration_path,class:"entry-btn" %>
+        <%= link_to "申し込みをする", new_user_session_path,class:"entry-btn" %>
     </div>
   <% end %>
 </div>
