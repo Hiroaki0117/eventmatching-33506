@@ -26,7 +26,7 @@ class EntriesController < ApplicationController
   end
 
   def move_to_index_entry
-    if current_user.id == @event.user_id || @event.id.nil
+    if current_user.id == @event.user_id || @event.id.blank?
       redirect_to root_path
     end
   end
