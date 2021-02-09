@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   get 'entries/index'
   root to: 'events#index'
   resources :events do
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
     end
     resources :entries, only:[:index, :create]
   end
-  resources :users, only: :show do
+  resources :users, only: [:show] do
     member do
       get 'mypage'
     end

@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates :area_id, numericality: { other_than: 1, message: "を選択してください" }
   end
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
-  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は英数字混合にしてください' }
+  #validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'は英数字混合にしてください' }
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々]+\z/
   with_options presence: true, format: { with: VALID_NAME_REGEX, message: 'は全角文字で入力してください' } do
     validates :family_name
@@ -27,4 +27,17 @@ class User < ApplicationRecord
   has_many :users
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
+
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
+  end
 end

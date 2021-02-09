@@ -64,7 +64,7 @@
     </tbody>
   </table>
   <div class="event-edit-btn">
-    <%= link_to "登録内容の編集", "#", class: "user-edit-path-btn" %>
+    <%= link_to "登録内容の編集", edit_user_registration_path(@user.id), class: "user-edit-path-btn" %>
     <%= link_to "ユーザー情報の削除", "#", data: { confirm: '削除しますか？' }, class: "user-delete-path-btn" %>
   </div>
 </div>
