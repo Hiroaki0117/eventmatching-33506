@@ -76,7 +76,7 @@
                           '年', '月') + '日'
               %>
                 <br>
-                  イベント開始時間
+                  イベント予定時刻
                   <br>
                     <%= f.collection_select(:start_time_id, StartTime.all, :id, :name, {}, {class:"event-time-default"}) %> ~ <%= f.collection_select(:end_time_id, EndTime.all, :id, :name, {}, {class:"event-time-default"}) %>
             </td>
