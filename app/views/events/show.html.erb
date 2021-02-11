@@ -38,7 +38,7 @@
             イベントの日時
           </th>
           <td>
-           <%= @event.day.year %>年<%= @event.day.month %>月<%= @event.day.day %>日
+           <%= @event.day.month %>月<%= @event.day.day %>日 <%= @event.start_time.name %> ~ <%= @event.end_time.name %>
           </td>
         </tr>
         <tr>

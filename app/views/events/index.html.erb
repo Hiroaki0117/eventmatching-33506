@@ -30,17 +30,17 @@
           <h2 class="event-name"><%= link_to event.name, event_path(event.id), class:"event-name-font" %></h2>
           <dl class="event-exp">
             <dt>
-              <img src="https://images.e-venz.com/frontend/image/location.svg" class="Location lazy" alt="Location">
+              <img src="https://images.e-venz.com/frontend/image/location.svg" class="Location lazy" alt="Location"><p class="event-text">開催場所：</p>
             </dt>
             <dd><%= event.place %></dd>
             <dt>
-              <img src="https://images.e-venz.com/frontend/image/women.svg" alt="Women" class="lazy">
+              <img src="https://images.e-venz.com/frontend/image/women.svg" alt="Women" class="lazy"><img src="https://images.e-venz.com/frontend/image/men.svg" alt="Men" class="lazy"> <p class="event-text">募集人数：</p>
             </dt>
             <dd><%= event.capacity %>人</dd>
             <dt>
-              <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy">
+              <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy"> <p class="event-text">開催日時：</p>
             </dt>
-            <dd><%= event.day.year %>年<%= event.day.month %>月<%= event.day.day %>日<%= event.day_time.name %>開始 </dd>
+            <dd><%= event.day.month %>月<%= event.day.day %>日 <%= event.start_time.name %> ~ <%= event.end_time.name %></dd>
           </dl>
           
         </li>

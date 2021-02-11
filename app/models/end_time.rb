@@ -1,4 +1,4 @@
-class StartTime < ActiveHash::Base
+class EndTime < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '00:00' },

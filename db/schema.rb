@@ -47,7 +47,8 @@ ActiveRecord::Schema.define(version: 2021_02_09_045527) do
     t.text "explanation", null: false
     t.string "genre_id", null: false
     t.date "day", null: false
-    t.integer "day_time_id", null: false
+    t.integer "start_time_id", null: false
+    t.integer "end_time_id", null: false
     t.string "capacity", null: false
     t.integer "area_id", null: false
     t.string "place", null: false

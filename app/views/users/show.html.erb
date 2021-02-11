@@ -1,7 +1,7 @@
 <%= render "events/header-second" %>
 <div class="events-main-contents">
   <div class="event-create-main">
-    <h1 class="events-create-title"><%= current_user.nickname %>さんのマイページ</h1>
+    <h1 class="events-create-title"><%= current_user.nickname %>さんの投稿一覧</h1>
   </div>
   <% if user_signed_in? %>
     <% if current_user.id == @user.id  %> 
@@ -22,7 +22,7 @@
           <% end %>
           <h2 class="event-name"><%= link_to event.name, event_path(event.id), class:"event-name-font" %></h2>
           <dl class="event-exp">
-            <dt>
+  e          <dt>
               <img src="https://images.e-venz.com/frontend/image/location.svg" class="Location lazy" alt="Location">
             </dt>
             <dd><%= event.place %></dd>
@@ -33,7 +33,7 @@
             <dt>
               <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy">
             </dt>
-            <dd><%= event.day.year %>年<%= event.day.month %>月<%= event.day.day %>日<%= event.day_time.name %>開始 </dd>
+            <dd><%= event.day.month %>月<%= event.day.day %>日 <%= event.start_time.name %> ~ <%= event.end_time.name %></dd>
           </dl>
           
         </li>
