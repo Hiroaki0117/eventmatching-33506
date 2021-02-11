@@ -45,3 +45,6 @@ ja:
         capacity:         予定人数
         area_id:          都道府県
         place:            開催場所
+  recaptcha: 
+    errors: 
+      verification_failed: 'reCAPTCHA認証に失敗しました。' 

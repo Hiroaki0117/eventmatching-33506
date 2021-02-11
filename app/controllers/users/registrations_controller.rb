@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
+  before_action :check_captcha, only: [:create]
 
   def create
     if params[:sns_auth] == 'true'
@@ -10,10 +11,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
+
+
   protected
 
   def update_resource(resource, params)
     resource.update_without_current_password(params)
+  end
+
+  def check_captcha
+    self.resource = resource_class.new sign_up_params
+    resource.validate
+    unless verify_recaptcha(model: resource)
+      respond_with_navigational(resource) { render :new }
+    end
   end
 
   def destroy
