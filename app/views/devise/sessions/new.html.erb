@@ -5,9 +5,20 @@
       <h1 class="events-create-title">会員情報入力</h1>
       <div class="login-no-account">
         <p>アカウントをお持ちでない方はこちら</p>
-        <%= link_to "新規会員登録", new_user_registration_path, class:"account-btn" %>
+        <div class="no-logins">
+          <%= link_to "新規会員登録", new_user_registration_path, class:"account-btn" %>
+        </div>
+        <div class="login-box-logos">
+          <%= link_to user_facebook_omniauth_authorize_path, method: :post, class:"facebook-logos" do %>
+            <i class="fab fa-facebook"></i><p class="logo-font">Facebookで登録</p>
+          <% end %>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class:"google-logos" do %>
+            <i class="fab fa-google"></i><p class="logo-font">Googleで登録</p>
+          <% end %>
+        </div>
       </div>
       <%= render 'shared/error_messages', model: f.object %>
+      
       <table class="events-table">
         <tbody>
           <tr>

@@ -1,0 +1,18 @@
+<%= render "events/header-second" %>
+<div class="events-main-contents">
+  <div class="event-create-main">
+    <h1 class="events-create-title">新規会員登録</h1>
+    <div class="login-box-logo">
+      <%= link_to new_user_registration_path, class:"email-box" do %>
+        <i class="far fa-envelope"></i><p class="logo-font">メールアドレスで登録</p>
+      <% end %>
+      <%= link_to user_facebook_omniauth_authorize_path, method: :post, class:"facebook-logo" do %>
+        <i class="fab fa-facebook"></i><p class="logo-font">Facebookで登録</p>
+      <% end %>
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class:"google-logo" do %>
+        <i class="fab fa-google"></i><p class="logo-font">Googleで登録</p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "events/footer" %>

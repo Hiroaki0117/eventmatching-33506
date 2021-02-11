@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   get 'entries/index'
   root to: 'events#index'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     end
     resources :entries, only:[:index, :create]
   end
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :new] do
     member do
       get 'mypage'
     end

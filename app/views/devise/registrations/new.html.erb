@@ -27,26 +27,30 @@
             <%= f.email_field :email, class:"event-form-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
           </td>
         </tr>
-        <tr>
-          <th>
-            パスワード(6文字以上)
-            <br>
-            <span class="mandatory">必須</span>
-          </th>
-          <td>
-            <%= f.password_field :password, class:"event-form-default", id:"password", placeholder:"6文字以上の半角英数字" %>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            パスワード(確認)
-            <br>
-            <span class="mandatory">必須</span>
-          </th>
-          <td>
-            <%= f.password_field :password_confirmation, class:"event-form-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
-          </td>
-        </tr>
+        <%if @sns_id.present? %>
+          <%= hidden_field_tag :sns_auth, true %>
+        <% else %>
+          <tr>
+            <th>
+              パスワード(6文字以上)
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.password_field :password, class:"event-form-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              パスワード(確認)
+              <br>
+              <span class="mandatory">必須</span>
+            </th>
+            <td>
+              <%= f.password_field :password_confirmation, class:"event-form-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+            </td>
+          </tr>
+        <% end %>
         <tr>
           <th>
             お名前(全角)
