@@ -47,6 +47,17 @@ RSpec.describe Event, type: :model do
         @event.valid?
         expect(@event.errors.full_messages).to include("イベント終了時刻を選択してください")
       end
+      it "イベントの日時が今日よりも前の日付だと登録できない" do
+        @event.day = "2021-01-21"
+        @event.valid?
+        expect(@event.errors.full_messages).to include("日時は今日以降のものを選択してください")
+      end
+      it "イベントの終了時刻が開始時刻よりも前だと登録できない" do
+        @event.start_time_id =5
+        @event.end_time_id =3
+        @event.valid?
+        expect(@event.errors.full_messages).to include("イベント終了時刻は開始時刻よりも後の時刻を選択してください")
+      end
       it "イベントの予定人数が空だと登録できない" do
         @event.capacity = nil
         @event.valid?
