@@ -19,6 +19,8 @@
 ### Association
 - has_many :events
 - has_many :entries
+- has_many :sns_credentials
+- belongs_to :area
 
 
 ## events テーブル
@@ -28,7 +30,8 @@
 | explanation        | text    | null: false               |
 | genre_id           | string  | null: false               |
 | day                | date    | null: false               |
-| time_id            | integer | null: false               |
+| start_time_id      | integer | null: false               |
+| end_time_id        | integer | null: false               |
 | capacity           | string  | null: false               |
 | area_id            | integer | null: false               |
 | place              | string  | null: false               |
@@ -36,6 +39,10 @@
 ### Association
 - belongs_to :user
 - has_many :entries
+- belongs_to :genre
+- belongs_to :area
+- belongs_to :start_time
+- belongs_to :end_time
 
 ## entries テーブル
 | Column        | Type       | Options                        |
@@ -47,7 +54,15 @@
 - belongs_to :user
 - belongs_to :event
 
+## sns_credential テーブル
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| provider      | string     |                                |
+| uid           | string     |                                |
+| user          | references | foreign_key: true              |
 
+### Association
+- belongs_to :user
 
 
 
