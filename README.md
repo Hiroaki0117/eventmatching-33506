@@ -1,3 +1,6 @@
+# アプリケーション名
+## イベントマッチングアプリ
+
 # テーブル設計
 
 ## users テーブル
@@ -59,7 +62,7 @@
 | ------------- | ---------- | ------------------------------ |
 | provider      | string     |                                |
 | uid           | string     |                                |
-| user          | references | foreign_key: true              |
+| user          | references | foreign_key: true                 |
 
 ### Association
 - belongs_to :user
