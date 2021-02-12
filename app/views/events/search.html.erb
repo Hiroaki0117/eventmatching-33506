@@ -1,7 +1,9 @@
 <%= render "header" %>
-<div class="main-index"> 
-  <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "イベントを検索する", class: "search-input" %>
+<div class="main-index">
+  <%= search_form_for @p, url: search_events_path, local: true, method: :get, class: "search-form" do |form| %>
+    <%= form.collection_select :genre_id_eq, @events_genre, :id, :name, include_blank: 'ジャンル' %>
+    <%= form.collection_select :area_id_eq, @events_area, :id, :name, include_blank: '都道府県' %>
+    <%= form.text_field :name_cont, placeholder: "イベントを検索する", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
 
@@ -12,36 +14,46 @@
     <div class="top-message">
     <h1>＜新しいイベント情報＞</h1>
     </div>
-    
-    <ul class="main-list">
-      <% @events.each do |event|%>
-        <li class="event-info">
-          <div class="sports-genre">      
-            <%= event.genre.name %>
-          </div>
-          <div class="sports-area">
-            <%= event.area.name %>
-          </div>
-          <dl class="event-exp">
-            <dt>イベント名</dt>
-            <dd><%= link_to event.name, "#" %></dd>
-            <dt>イベントの内容</dt>
-            <dd><%= link_to event.explanation, "#" %></dd>
-            <dt>開催場所</dt>
-            <dd><%= event.place %></dd>
-            <dt>予定人数</dt>
-            <dd><%= event.capacity %>人</dd>
-            <dt>日付</dt>
-            <dd><%= event.date.year %>年<%= event.date.month %>月<%= event.date.day %>日</dd>
-          </dl>
-          <%= link_to "#", class:"img-link" do %>
-            <%= image_tag event.image.variant(resize: '150x120') %>
-          <% end %>
-        </li>
-      <% end %>
-      <%= paginate @events %>
-    <ul>
-    
+    <% if @events.length !=0 %>
+      <div class="event-count">
+      <h2>現在のイベント募集数：<strong><%= @events.count %></strong>件<h2>
+      </div>
+      <ul class="main-list">
+        <% @events.each do |event|%>
+          <li class="event-info">
+            <div class="sports-genre">      
+              <%= event.genre.name %>
+            </div>
+            <div class="sports-area">
+              <%= event.area.name %>
+            </div>
+            <%= link_to event_path(event.id), class:"img-link" do %>
+              <%= image_tag event.image.variant(resize: '500x400') %>
+            <% end %>
+            <h2 class="event-name"><%= link_to event.name, event_path(event.id), class:"event-name-font" %></h2>
+            <dl class="event-exp">
+              <dt>
+                <img src="https://images.e-venz.com/frontend/image/location.svg" class="Location lazy" alt="Location"><p class="event-text">開催場所：</p>
+              </dt>
+              <dd><%= event.place %></dd>
+              <dt>
+                <img src="https://images.e-venz.com/frontend/image/women.svg" alt="Women" class="lazy"><img src="https://images.e-venz.com/frontend/image/men.svg" alt="Men" class="lazy"> <p class="event-text">募集人数：</p>
+              </dt>
+              <dd><%= event.capacity %>人</dd>
+              <dt>
+                <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy"> <p class="event-text">開催日時：</p>
+              </dt>
+              <dd><%= event.day.month %>月<%= event.day.day %>日 <%= event.start_time.name %> ~ <%= event.end_time.name %></dd>
+            </dl>
+          </li>
+        <% end %>
+        <%= paginate @events %>
+      <ul>
+    <% else %>
+      <div class="event-count">
+        <h2>該当するイベントはありません</h2>
+      </div>
+    <% end %>
   </div>
 </div>
 <%= render "footer" %>

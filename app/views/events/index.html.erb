@@ -1,7 +1,9 @@
 <%= render "header" %>
 <div class="main-index">
-  <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "イベントを検索する", class: "search-input" %>
+  <%= search_form_for @p, url: search_events_path, local: true, method: :get, class: "search-form" do |form| %>
+    <%= form.collection_select :genre_id_eq, @events_genre, :id, :name, include_blank: 'ジャンル' %>
+    <%= form.collection_select :area_id_eq, @events_area, :id, :name, include_blank: '都道府県' %>
+    <%= form.text_field :name_cont, placeholder: "イベントを検索する", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
 

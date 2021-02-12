@@ -167,3 +167,9 @@
   text-decoration: none;
   color: #987945;
 }
+
+.main-index select {
+  height: 30px;
+  width: 180px;
+  margin-right: 5px;
+}

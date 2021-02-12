@@ -2,8 +2,10 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create, :edit, :update, :destroy]
   before_action :event_id_params, only:[:show, :edit, :update, :destroy]
   before_action :move_to_index_edit, only:[:edit, :destroy]
+  before_action :search_event, only:[:index, :search]
   def index
     @events = Event.order("created_at DESC").page(params[:page]).per(6).includes(:user)
+    set_event_column
   end
 
   def new
@@ -39,7 +41,7 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.search(params[:keyword])
+    @events = @p.result.includes(:user)
     @events = @events.order("created_at DESC").page(params[:page]).per(6).includes(:user)
   end
 
@@ -57,5 +59,15 @@ class EventsController < ApplicationController
     if current_user.id != @event.user_id 
       redirect_to root_path
     end
+  end
+
+  def search_event
+    @p = Event.ransack(params[:q])
+    set_event_column
+  end
+
+  def set_event_column
+    @events_genre = Genre.where.not(id:1)
+    @events_area = Area.where.not(id:1)
   end
 end
