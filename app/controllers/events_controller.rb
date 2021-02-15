@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'イベントの投稿が完了しました'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to event_path
+      redirect_to event_path, notice: 'イベントの編集が完了しました'
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: 'イベントが消去されました'
   end
 
   def search

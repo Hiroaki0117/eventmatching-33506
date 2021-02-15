@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
     if @entry.valid?
       @entry.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'イベント申し込みが送信されました'
     else
       render action: :index
     end
