@@ -73,6 +73,14 @@
            <%= @event.place %>
           </td>
         </tr>
+        <tr>
+          <th>
+            イベント投稿者
+          </th>
+          <td>
+           <%= link_to @event.user.nickname, user_path(current_user.id) %>
+          </td>
+        </tr>
       </tbody>
   </table>
   <% if user_signed_in? %>
