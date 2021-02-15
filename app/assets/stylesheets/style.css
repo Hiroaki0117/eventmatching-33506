@@ -154,6 +154,20 @@ li {
   cursor: pointer;
 }
 
+.notifications {
+  color: black;
+  text-align: center;  
+}
+.notice {
+  background-color: orange;
+  font-size: 20px;
+}
+
+.alert {
+  background-color: orange;
+}
+
+
 /* フッター */
 .footer {
   padding-bottom: 60px;
