@@ -114,10 +114,21 @@ https://eventmatching-33506.herokuapp.com/
 | ------------- | ---------- | ------------------------------ |
 | provider      | string     |                                |
 | uid           | string     |                                |
-| user          | references | foreign_key: true                 |
+| user          | references | foreign_key: true              |
 
 ### Association
 - belongs_to :user
+
+## likes テーブル
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| event         | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :event
+
 # ローカルでの動作方法
 1. $ git clone https://github.com/Hiroaki0117/eventmatching-33506.git
 2. $ cd eventmatching-33506
