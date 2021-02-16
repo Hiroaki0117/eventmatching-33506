@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :entries
   has_many :users
   has_many :sns_credentials
+  has_many :likes, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
 
@@ -57,6 +58,10 @@ class User < ApplicationRecord
       sns.save
     end
     { user: user, sns: sns }
+  end
+
+  def already_liked?(event)
+    self.likes.exists?(event_id: event.id)
   end
 
 end

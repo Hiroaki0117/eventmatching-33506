@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :entries, only:[:index, :create]
+    resource :likes, only:[:create, :destroy]
   end
   resources :users, only: [:show, :new] do
     member do
