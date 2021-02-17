@@ -1,8 +1,7 @@
 class LikesController < ApplicationController
 
   def create 
-    @event = Event.find(params[:event_id])
-    @like = current_user.likes.create(event_id: @event.id)
+    @like = current_user.likes.create(event_id: params[:event_id])
     redirect_back(fallback_location: root_path)
   end
 

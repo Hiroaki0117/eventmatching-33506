@@ -173,3 +173,15 @@
   width: 180px;
   margin-right: 5px;
 }
+
+.event-exp {
+  position: relative;
+}
+
+.like-icon {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-size: 20px;
+}
+
