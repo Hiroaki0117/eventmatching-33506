@@ -1,17 +1,19 @@
-<% if user_signed_in? %>
-  <% if current_user.already_liked?(event) %>
-    <%= link_to event_likes_path(event), method: :delete, remote: true do %>
-      <i class="fas fa-heart"></i>
-    <%  end %>
+<div class="like-icon">  
+  <% if user_signed_in? %>
+    <% if current_user.already_liked?(event) %>
+      <%= link_to event_likes_path(event), method: :delete do %>
+        <i class="fas fa-heart"></i>
+      <%  end %>
+    <% else%>
+      <%= link_to event_likes_path(event), method: :post do %>
+        <i class="far fa-heart"></i>
+      <%  end %>
+    <% end %>
+    <%= event.likes.count %>
   <% else%>
-    <%= link_to event_likes_path(event), method: :post, remote: true do %>
+    <%= link_to new_user_path  do %>
       <i class="far fa-heart"></i>
-    <%  end %>
+    <% end %>
+    <%= event.likes.count %>
   <% end %>
-  <%= event.likes.count %>
-<% else%>
-  <%= link_to new_user_path  do %>
-    <i class="far fa-heart"></i>
-  <% end %>
-  <%= event.likes.count %>
-<% end %>
+</div>
