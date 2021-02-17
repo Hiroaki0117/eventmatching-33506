@@ -43,9 +43,8 @@
               <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy"> <p class="event-text">開催日時：</p>
             </dt>
             <dd><%= event.day.month %>月<%= event.day.day %>日 <%= event.start_time.name %> ~ <%= event.end_time.name %></dd>
-            <div id="likes_buttons_<%= event.id %>">
-              <%= render partial: "like", locals: { event: event } %>
-            </div>
+            <%= render partial: "like", locals: { event: event } %>
+
           </dl>
           
         </li>
