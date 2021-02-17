@@ -35,6 +35,7 @@
                 <img src="https://images.e-venz.com/frontend/image/calendar.svg" alt="Calendar" class="lazy">
               </dt>
               <dd><%= event.day.month %>月<%= event.day.day %>日 <%= event.start_time.name %> ~ <%= event.end_time.name %></dd>
+              <%= render partial: "events/like", locals: { event: event } %>
             </dl>
             
           </li>
