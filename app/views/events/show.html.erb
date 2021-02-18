@@ -78,7 +78,7 @@
             イベント投稿者
           </th>
           <td>
-           <%= link_to @event.user.nickname, user_path(current_user.id) %>
+           <%= link_to @event.user.nickname, user_path(@event.user_id) %>
           </td>
         </tr>
       </tbody>

@@ -1,7 +1,7 @@
 <%= render "events/header-second" %>
 <div class="events-main-contents">
   <div class="event-create-main">
-    <h1 class="events-create-title"><%= current_user.nickname %>さんの投稿一覧</h1>
+    <h1 class="events-create-title"><%= @user.nickname %>さんの投稿一覧</h1>
   </div>
   <% if user_signed_in? %>
     <% if current_user.id == @user.id  %> 
