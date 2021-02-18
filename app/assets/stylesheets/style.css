@@ -26,12 +26,6 @@ li {
   list-style: none;
 }
 
-
-
-
-
-/* ヘッダー */
-
 .header {
   background-color: powderblue;
   padding: 20px 0;
@@ -117,7 +111,6 @@ li {
   height: 49px;
 }
 
-/* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
   text-align: center;
@@ -167,13 +160,16 @@ li {
   background-color: orange;
 }
 
-
-/* フッター */
 .footer {
   padding-bottom: 60px;
   color: #fff;
   background: rgb(24, 23, 23);
   width: 100vw;
+}
+
+.footer-logo {
+  text-align: center;
+  padding-top: 30px;
 }
 
 .copyright {
