@@ -185,3 +185,29 @@
   font-size: 20px;
 }
 
+.slider {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.slider img {
+  width: 80%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.fa-arrow-alt-circle-left {
+  font-size: 50px;
+  position: absolute;
+  z-index: 100;
+  left: -100px;
+  top: 300px;
+}
+
+.fa-arrow-alt-circle-right {
+  font-size: 50px;
+  position: absolute;
+  z-index: 100;
+  right: -100px;
+  top: 300px
+}
