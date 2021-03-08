@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_032203) do
     t.integer "end_time_id", null: false
     t.string "capacity", null: false
     t.integer "area_id", null: false
-    t.string "place", null: false
+    t.string "address", null: false
     t.float "latitude"
     t.float "longitude"
     t.bigint "user_id"

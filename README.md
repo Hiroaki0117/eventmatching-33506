@@ -77,7 +77,7 @@ https://eventmatching-33506.herokuapp.com/
 | longitude          | float   |                           |
 | capacity           | string  | null: false               |
 | area_id            | integer | null: false               |
-| place              | string  | null: false               |
+| address            | string  | null: false               |
 
 ### Association
 - belongs_to :user
