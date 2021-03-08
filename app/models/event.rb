@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  geocoded_by :place
+  after_validation :geocode, if: :place_changed?
   has_one_attached :image
   has_many :entries, dependent: :destroy
   has_many :likes, dependent: :destroy
