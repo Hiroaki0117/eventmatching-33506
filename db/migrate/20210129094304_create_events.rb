@@ -10,6 +10,8 @@ class CreateEvents < ActiveRecord::Migration[6.0]
       t.string     :capacity,         null: false
       t.integer    :area_id,          null: false
       t.string     :place,            null: false
+      t.float      :latitude
+      t.float      :longitude
       t.references :user,             foreign_key: true
       t.timestamps
     end

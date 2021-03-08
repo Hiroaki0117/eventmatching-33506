@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_02_16_032203) do
     t.string "capacity", null: false
     t.integer "area_id", null: false
     t.string "place", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

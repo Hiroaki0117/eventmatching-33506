@@ -73,6 +73,8 @@ https://eventmatching-33506.herokuapp.com/
 | day                | date    | null: false               |
 | start_time_id      | integer | null: false               |
 | end_time_id        | integer | null: false               |
+| latitude           | float   |                           |
+| longitude          | float   |                           |
 | capacity           | string  | null: false               |
 | area_id            | integer | null: false               |
 | place              | string  | null: false               |
