@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  geocoded_by :place
-  after_validation :geocode, if: :place_changed?
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   has_one_attached :image
   has_many :entries, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -16,7 +16,7 @@ class Event < ApplicationRecord
     validates :explanation
     validates :day    
     validates :capacity
-    validates :place
+    validates :address
   end
   with_options numericality: { other_than: 1, message: "を選択してください" }, presence: true do
     validates :genre_id

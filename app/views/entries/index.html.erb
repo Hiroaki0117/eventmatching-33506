@@ -27,8 +27,8 @@
             </tr>
             <tr>
               <th>イベントの開催場所</th>
-              <td><%= @event.place %></td>
-              <%= f.hidden_field :@event_id, value:@event.place %>
+              <td><%= @event.address %></td>
+              <%= f.hidden_field :@event_id, value:@event.address %>
             </tr>
           </tbody>
         </table>
