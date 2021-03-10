@@ -1,0 +1,143 @@
+.header {
+  background-color: powderblue;
+  padding: 20px 0;
+  align-items: center;
+  
+}
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__left {
+  font-size: 25px;
+}
+
+.nav__right {
+  border: 2px solid #000000;
+  background-color: #fafafa;
+  position: relative;
+}
+
+.nav__right span {
+  display: block;
+  float: left;
+  margin-left: 30px;
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav__right span::after {
+  content: '▼';
+  font-size: .7em;
+  margin-left: -4px;
+}
+
+.nav__right ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 5px rgb(0 0 0 / 10%);
+}
+
+.nav__right ul li {
+  background-color: #f0f0f0;
+}
+
+ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__right ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  border-bottom: 1px solid #d8d8d8;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+}
+
+.nav__right ul li a:hover {
+  color: rgb(135, 158, 235);
+}
+
+.nav__right span:hover ul {
+  color: #57C3E9;
+  display: block;
+}
+
+.logo {
+  width: 200px;
+}
+
+.nav__btn{
+  display: inline-block;
+  padding: 0.6em 1.6em;
+  font-size: 1.0em;
+  color: #000000;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  font-weight: 600;
+}
+
+.nav__btn:hover{
+  color: rgb(135, 158, 235);
+}
+
+.login_user_name{
+  display: inline-block;
+  font-size: 1.2em;
+  color: #000000;
+  padding: 0.6em 1.6em;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login_user_name:hover{
+  color: rgb(135, 158, 235);
+}
+
+.nav__logout{
+  display: inline-block;
+  padding: 0.6em 1.6em;
+  font-size: 1.0em;
+  color: #000000;
+  text-decoration: none;
+  user-select: none;
+  font-weight: 600;
+}
+.nav__logout:hover{
+  color: rgb(135, 158, 235);
+}
+
+.header-second {
+  width: 100%;
+  min-width: 800px;
+  height: 130px;
+  background-color: powderblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-logo {
+  width: 185px;
+  height: 49px;
+}
