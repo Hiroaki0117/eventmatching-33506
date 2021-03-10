@@ -32,6 +32,8 @@
 .top-image {
   width: 70%;
   height: 70%;
+  max-height: 600px;
+  max-width: 1000px;
   border: 1px #CCCCCC solid;
 }
 
@@ -130,6 +132,7 @@
   justify-content: flex-start;
   margin-bottom: 25px;
 }
+
 .pagination span{
   background-color: rgba(158, 158, 158, 0.4);
   text-align: center;
